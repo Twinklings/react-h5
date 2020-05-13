@@ -1,0 +1,24 @@
+
+.wrapper{
+    margin: 0 .3rem;
+}
+
+
+.product_intro{
+    margin-top: .2rem;
+}
+.title{
+    line-height: 40px;
+}
+.money{
+    font-size: .28rem;
+    font-weight: 700;
+}
+
+.font-color-red {
+    color: #fc4141!important;
+}
+
+.wrapper .money .num {
+    font-size: .48rem;
+}
