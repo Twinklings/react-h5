@@ -1,0 +1,60 @@
+.setAddr{
+    padding: 6px 0;
+}
+
+
+.text{
+    text-align: center;
+    text-decoration: line-through;
+}
+.item{
+    background: #ffffff;
+    padding: 12px 10px;
+    color: #696969;
+    overflow: auto;
+}
+.tips{
+    border: 1px solid #07c160;
+    border-radius: 4px;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 10px;
+}
+
+.footer .bnt .lease {
+    display: inline-block;
+    margin-top: .13rem;
+    width: 4.44rem;
+    height: .76rem;
+    color: #fff;
+    font-size: .30rem;
+    border-radius: 0.5rem;
+    background-color: #07c160;
+    text-align: center;
+}
+.footer .bnt .lease span{
+    padding: 2px 0;
+    display: inline-block;
+}
+.tip{
+    font-size: .14rem;
+}
+.textarea{
+    background-color: rgb(245, 245, 245) !important;
+    border: 0;
+    width: 100%;
+    height: 80px;
+    margin-top: 14px;
+    padding: 8px;
+    box-sizing: border-box;
+    resize: none;
+}
+.goodImg{
+    width: 80px;
+    height: 80px;
+    padding-right: 10px;
+}
+.goodD{
+    padding-right: 10px;
+    line-height: 20px;
+}

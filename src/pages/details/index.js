@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { Carousel, WingBlank} from 'antd-mobile';
+import { withRouter } from 'react-router-dom';
+import { createHashHistory } from 'history'; // 如果是hash路由
+
 // import {wx} from 'https://res.wx.qq.com/open/js/jweixin-1.5.0.js';
 // import {axios} from '../../services/api'
 import "./index.css";
+const history = createHashHistory();
 function Example() {
 
     // const [count, setCount] = useState(0);
@@ -13,8 +17,21 @@ function Example() {
 
     // 
 
-    // 轮播图
-    const data = ['http://yshop.mekedoo.com/uploads/attach/2020/04/20200417/3c7615403bd9892aa49f750ef08c3728.png']
+    // 详情数据
+
+    const detailsData = {
+        imgList:['http://yshop.mekedoo.com/uploads/attach/2020/04/20200417/3c7615403bd9892aa49f750ef08c3728.png'],
+        detailsImg:"http://yshop.mekedoo.com/uploads/attach/2020/04/20200417/877d7ca3e68621a198cac33d0619f81e.png",
+        stock:"1098",
+        salesVolume:"3358",
+        describe:"信用免押领取，包邮发货，收到机器激活开通后，订单完成，增加信用记录，且终身无需归还",
+        money:"99.00"
+    }
+
+    const getItNow = () => {
+        history.push('/order');
+        // this.props.history.push('/addres');
+    }
 
     return (
         <div>
@@ -22,8 +39,9 @@ function Example() {
                 <Carousel
                 autoplay={true}
                 infinite
+                style={{height:'auto'}}
                 >
-                {data.map((val,index) => (
+                {detailsData.imgList.map((val,index) => (
                     <img
                         key={index}
                         src={`${val}`}
@@ -33,25 +51,25 @@ function Example() {
                 ))}
                 </Carousel>
             </WingBlank>
-            <div class="wrapper">
-                <div class="share money font-color-red">￥<span class="num">99.00</span>以免除</div>
-                <div class="introduce">信用免押领取，包邮发货，收到机器激活开通后，订单完成，增加信用记录，且终身无需归还</div>
-                <div class="label"><div>库存:1098件</div><div style={{float:"right"}}>销量:3358件</div></div>
+            <div className={"wrapper"}>
+                <div className={"share money font-color-red"}>￥<span className={"num"}>{detailsData.money}</span>以免除</div>
+                <div className={"introduce"}>{detailsData.describe}</div>
+                <div className={"label"}><div>库存:{detailsData.stock}件</div><div style={{float:"right"}}>销量:{detailsData.salesVolume}件</div></div>
             </div>
-            <div class='product_intro'>
-                <div class='title'>产品介绍</div>
-                <div class="conter">
-                    <img src="http://yshop.mekedoo.com/uploads/attach/2020/04/20200417/877d7ca3e68621a198cac33d0619f81e.png" />
+            <div className={'product_intro'}>
+                <div className={'title'}>产品介绍</div>
+                <div className={"conter"}>
+                    <img src={detailsData.detailsImg} />
                 </div>
             </div>
 
-            <div class="footer acea-row row-between-wrapper">
-                <div class="bnt acea-row">
-                    <div class="buy">立即领取</div>
+            <div className={"footer acea-row row-between-wrapper"}>
+                <div className={"bnt acea-row"}>
+                    <div className={"buy"} onClick={getItNow}>立即领取</div>
                 </div>
             </div>
         </div>
    );
 }
 
-export default Example
+export default withRouter(Example)
