@@ -15,7 +15,7 @@ service.interceptors.request.use(config => {
     // belonging_id:getCookie("username"),
     ...config.data
   }
-  console.log(config.params)
+  console.log(config)
   // if (store.getters.token) {
     // config.headers['Authorization'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改
     // config.headers['token'] = getToken() // 让每个请求携带自定义token 请根据实际情况自行修改

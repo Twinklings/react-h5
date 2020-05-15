@@ -1,9 +1,9 @@
 import request from '../utils/axios'
 
-export function axios(url,params) {
+export function axios(params) {
     return request({
-      url:url,
-      method:'post',
-      data:params
+      url:params.url,
+      method:params.methodType || 'post',
+      data:params.params
     })
 }

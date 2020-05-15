@@ -2,20 +2,20 @@ import React, { useState } from 'react';
 import { Carousel, WingBlank} from 'antd-mobile';
 import { withRouter } from 'react-router-dom';
 import { createHashHistory } from 'history'; // 如果是hash路由
-
-// import {wx} from 'https://res.wx.qq.com/open/js/jweixin-1.5.0.js';
-// import {axios} from '../../services/api'
+import {axios} from '../../services/api'
 import "./index.css";
 const history = createHashHistory();
 function Example() {
 
     // const [count, setCount] = useState(0);
 
-    // axios("/index/test",{signUrl: ""}).then(response=>{
+    axios({
+        url:"/wechat/test",
+        params:{signUrl: ""},
+        methodType:'get'
+    }).then(response=>{
         
-    // })
-
-    // 
+    })
 
     // 详情数据
 
@@ -30,25 +30,24 @@ function Example() {
 
     const getItNow = () => {
         history.push('/order');
-        // this.props.history.push('/addres');
     }
 
     return (
         <div>
             <WingBlank>
                 <Carousel
-                autoplay={true}
-                infinite
-                style={{height:'auto'}}
+                    autoplay={true}
+                    infinite
+                    style={{height:'auto'}}
                 >
-                {detailsData.imgList.map((val,index) => (
-                    <img
-                        key={index}
-                        src={`${val}`}
-                        alt=""
-                        style={{ width: '100%', verticalAlign: 'top'}}
-                    />
-                ))}
+                    {detailsData.imgList.map((val,index) => (
+                        <img
+                            key={index}
+                            src={`${val}`}
+                            alt=""
+                            style={{ width: '100%', verticalAlign: 'top'}}
+                        />
+                    ))}
                 </Carousel>
             </WingBlank>
             <div className={"wrapper"}>
@@ -62,7 +61,6 @@ function Example() {
                     <img src={detailsData.detailsImg} />
                 </div>
             </div>
-
             <div className={"footer acea-row row-between-wrapper"}>
                 <div className={"bnt acea-row"}>
                     <div className={"buy"} onClick={getItNow}>立即领取</div>
