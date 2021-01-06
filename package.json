@@ -19,7 +19,7 @@
     "@zeit/next-stylus": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "antd-mobile": "^2.3.1",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-loader": "^8.1.0",
     "babel-plugin-inline-react-svg": "^1.1.1",
     "babel-plugin-react-html-attrs": "^3.0.4",
